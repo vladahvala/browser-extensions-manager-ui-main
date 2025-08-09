@@ -1,0 +1,334 @@
+ /* BASE CUSTOMIZATION */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --bg-color-one: #ebf4fb;
+    --bg-color-two: #effbf9;
+    --logo-text-color: black;
+    --ex-container-color: white;
+    --theme-color: #eeeeee;
+    --theme-hover-color: #c6c6c6;
+    --tab-color: white;
+    --tab-hover-color: white;
+    --tab-hover-opacity: 0.5;
+    --text-inactive: black;
+    --text-active: #1f2533;
+    --border-color: #c8cbd8;
+  }
+
+  body.dark-theme {
+    --bg-color-one: #050b23;
+    --bg-color-two: #09153f;
+    --logo-text-color: white;
+    --ex-container-color: #1f2535;
+    --theme-color: #2e364b;
+    --theme-hover-color: #525868;
+    --tab-color: #2e364b;
+    --tab-hover-color: #525868;
+    --tab-hover-opacity: 1;
+    --text-inactive: white;
+    --text-active: #1f2533;
+    --border-color: #545a70;
+  }
+
+  @font-face {
+    font-family: 'NotoSans';
+    src: url('../fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'NotoSans';
+    src: url('../fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'NotoSans', sans-serif;
+    background: linear-gradient(var(--bg-color-one) 30%, var(--bg-color-two)80%);
+    min-height: 100vh; 
+    background-attachment: fixed; 
+  }
+
+
+   /* EXTENSIONS SECTION */
+  .container{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
+  }
+  
+  .extensions-container {
+    background-color: var(--ex-container-color);
+    align-self: center;
+    height: auto;
+    width: 80%;
+    margin-top: 2rem;
+    border-radius: 1rem;
+  
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+  }
+
+  .logo-image {
+    margin: 1rem 0 1rem 1rem;
+  }  
+
+  #text-path {
+    fill: var(--logo-text-color);
+  }
+
+  .theme-button{
+    all: unset;
+
+    align-self: center;
+    background-color: var(--theme-color);
+    height: 3rem;
+    width: 3rem;
+    margin: 1rem 1rem 1rem 0rem;
+    border-radius: 0.5rem;
+
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+    
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  .logo-sun,
+  .logo-moon{
+    font-size: 1.2rem;
+  }
+
+  .logo-sun{
+    display: none;
+  }
+
+
+   /* TITLE SECTION */
+  .extensions-list-container{
+    display: flex;
+    justify-content: space-between;
+
+    width: 80%;
+    align-self: center;
+    margin-top: 2rem;
+  }
+
+  .tab-container{
+    display: flex;
+    column-gap: 0.5rem;
+  }
+
+  .extensions-list{
+    color: var(--text-inactive);
+    font-size: 2rem;
+  }
+
+  .tabs{
+    background-color: var(--tab-color);
+    color: var(--text-inactive);
+    height: auto;
+    width: auto;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+
+    transition: .3s;
+    cursor: pointer;
+  }
+
+  .tabs:hover{
+    background-color: var(--tab-hover-color);
+  }
+
+  .theme-button:hover{
+    background-color: var(--theme-hover-color);
+  }
+
+  .tabs:hover{
+    opacity: var(--tab-hover-opacity);
+  }
+
+
+  /* CARD GRID + CARD CUSTOMIZATION*/
+  .card-container-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    width: 80%;
+    align-self: center;
+  
+    gap: 1rem 1rem; 
+  }
+  
+  .card {
+    background-color: var(--ex-container-color);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    height: 10.5rem;
+    width: 100%; 
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+  }
+
+  .card-top{
+    display: flex;
+  }
+
+  .card-image{
+    height: 3rem;
+    width: 3rem;
+    margin: 1rem;
+  }
+
+  .card-top-text{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .app-name{
+    font-weight: bold;
+    color: var(--text-inactive);
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .app-description{
+    font-size: 0.8rem;
+    margin: 0;
+    width: 88%;
+    color: var(--text-inactive);
+    opacity: 0.7;
+  }
+
+  .buttons-container{
+    display: flex;
+    margin: 1rem;
+    justify-content: space-between;
+    align-items: center; 
+    margin-top: auto;
+  }
+
+  .remove-button{
+    background-color: var(--ex-container-color);
+    padding: 0.5rem 0.7rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    color: var(--text-inactive);
+    font-size: 0.8rem;
+  }
+
+  .remove-button:hover{
+    background-color: #f15c58;
+    color: var(--text-active);
+    border: transparent;
+  }
+
+  .remove-button:focus,
+  .tabs:focus,
+  .theme-button:focus,
+  .switch input:focus + .slider{
+    outline: 2px solid #f15c58; 
+    outline-offset: 2px;       
+  }  
+  
+
+  .remove-button:focus{
+    background-color: #eeeef0;
+  }
+
+  
+  /* Switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 2rem;
+    height: 1rem; 
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 2rem;     
+    height: 1rem;  
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    z-index: 2; 
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0; 
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 1rem;
+  }
+  
+  .slider:before {
+    content: "";
+    position: absolute;
+    height: 0.8rem;
+    width: 0.8rem;
+    left: 0.125rem;
+    top: 0.1rem;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #f05d56;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(1rem);
+  }
+  
+
+  @media (max-width: 768px) {
+    .logo-image {
+      margin: 0.5rem 0 0.5rem 0.5rem;
+    }  
+
+    .theme-button {
+      margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+
+    .extensions-list-container{
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      margin-top: 0.5rem;
+
+    }
+
+    .extensions-list {
+      margin-bottom: 1rem;
+    }
+
+  .card-container-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  }
