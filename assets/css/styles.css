@@ -9,6 +9,7 @@
     --bg-color-one: #ebf4fb;
     --bg-color-two: #effbf9;
     --logo-text-color: black;
+    --logo-image-color: #c7231a;
     --ex-container-color: white;
     --theme-color: #eeeeee;
     --theme-hover-color: #c6c6c6;
@@ -18,12 +19,14 @@
     --text-inactive: black;
     --text-active: #1f2533;
     --border-color: #c8cbd8;
+    --remove-focus-color: #eeeeee;
   }
 
   body.dark-theme {
     --bg-color-one: #050b23;
     --bg-color-two: #09153f;
     --logo-text-color: white;
+    --logo-image-color: #f45b55;
     --ex-container-color: #1f2535;
     --theme-color: #2e364b;
     --theme-hover-color: #525868;
@@ -31,8 +34,9 @@
     --tab-hover-color: #525868;
     --tab-hover-opacity: 1;
     --text-inactive: white;
-    --text-active: #1f2533;
+    --text-active: white;
     --border-color: #545a70;
+    --remove-focus-color: #1f2535;
   }
 
   @font-face {
@@ -83,6 +87,10 @@
 
   #text-path {
     fill: var(--logo-text-color);
+  }
+
+  #logo-img{
+    fill: var(--logo-image-color);
   }
 
   .theme-button{
@@ -252,7 +260,7 @@
   
 
   .remove-button:focus{
-    background-color: #eeeef0;
+    background-color: var(--remove-focus-color);
   }
 
   
@@ -291,7 +299,7 @@
     position: absolute;
     height: 0.8rem;
     width: 0.8rem;
-    left: 0.125rem;
+    left: 0.2rem;
     top: 0.1rem;
     background-color: white;
     transition: .4s;
@@ -303,10 +311,9 @@
   }
 
   input:checked + .slider:before {
-    transform: translateX(1rem);
+    transform: translateX(0.8rem);
   }
-  
-
+ 
   @media (max-width: 768px) {
     .logo-image {
       margin: 0.5rem 0 0.5rem 0.5rem;

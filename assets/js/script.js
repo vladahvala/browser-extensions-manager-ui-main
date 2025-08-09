@@ -78,6 +78,7 @@ const allTabStyles = {
   border: 'transparent'
 };
 
+let currentActiveTab = ALlTab; 
 setActiveTab(ALlTab);  // All is active by default
 renderCards(extensionsData);
 
@@ -91,7 +92,7 @@ function isDarkTheme() {
 // Updating tab styles according to theme
 function updateTabColorsBasedOnTheme() {
     const isDark = isDarkTheme();
-    allTabStyles.color = isDark ? '##050b23' : 'white';
+    allTabStyles.color = isDark ? '#050b23' : 'white';
     allTabStyles.bg = isDark ? '#f15c58' : '#c3271f';
 }
 
@@ -112,6 +113,7 @@ function setActiveTab(tabElement) {
   tabElement.style.borderColor = allTabStyles.border;
 
   activeFilter = tabElement.textContent.trim();
+  currentActiveTab = tabElement;  
 }
 
 tabs.forEach(tab => {
@@ -134,9 +136,6 @@ const themeBtn = document.querySelector('.theme-button');
 const Sun = document.querySelector('.logo-sun');
 const Moon = document.querySelector('.logo-moon');
 
-const textPath = document.getElementById('text-path');
-
-
 // Updating the theme icon
 function updateThemeIcon() {
     const isDark = isDarkTheme();
@@ -151,13 +150,10 @@ function updateThemeIcon() {
 
 // Switching themes
 themeBtn.addEventListener('click', () => {
-
   document.body.classList.toggle('dark-theme');
   updateThemeIcon();
 
-  const activeTab = [...tabs].find(tab => tab.style.backgroundColor === allTabStyles.bg);
-  if (activeTab) setActiveTab(activeTab);
+  updateTabColorsBasedOnTheme(); 
+
+  if (currentActiveTab) setActiveTab(currentActiveTab); 
 });
-
-
-
